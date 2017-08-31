@@ -326,7 +326,7 @@ async def attribute_history(rq, host, port, domain, family, member, attr):
 	return json(
 		[{
 			"name": h.name,
-			"value": h.value,
+			"value": parse_numpy_array(h.value),
 			"quality": str(h.quality),
 			"timestamp": h.time.tv_sec,
 		} for h in hist]
