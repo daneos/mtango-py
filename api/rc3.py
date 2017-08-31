@@ -7,7 +7,7 @@ from sanic.response import json
 from tango import Database, CmdArgType, DevFailed
 
 import conf
-from utils import buildurl
+from utils import buildurl, parse_numpy_array
 from cache import getDeviceProxy, getAttributeProxy
 from exceptions import HTTP501_NotImplemented
 
@@ -263,7 +263,7 @@ async def attribute_value(rq, host, port, domain, family, member, attr, from_alt
 
 	data = {
 		"name": attr_value.name,
-		"value": value,
+		"value": parse_numpy_array(value),
 		"quality": str(attr_value.quality),
 		"timestamp": attr_value.time.tv_sec
 	}

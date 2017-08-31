@@ -27,3 +27,9 @@ class Version(tuple):
 
 	def url(self):
 		return "/".join(self._as_str_tuple())
+
+
+def parse_numpy_array(value):
+	if value.__class__.__name__ in ("ndarray",):
+		value = [x.item() for x in value]
+	return value
