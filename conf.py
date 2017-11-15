@@ -27,3 +27,6 @@ rc3_mode = "strict"
 
 # Proxy cache size (if set to None, cache grows indefinitely and nothing is removed)
 cache_size = 64
+
+# Disable access to system API
+disable_sysapi = False

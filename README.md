@@ -151,6 +151,7 @@ The available options are:
 	In current version, this option affects only the attribute properties call.  
     In `strict` mode these are returned as an object, with keys being properties names, and values - property values.  
     In `implementation` mode these are returned as list of objects containing `name` and `_empty` attributes.
+* `disable_sysapi` - disable access to mtango-py system API
 
 ## Requirements
 * Python 3.5
